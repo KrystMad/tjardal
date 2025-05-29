@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tjärdal — technopoetyka ognia i czasu</title>
+  <!-- Google Fonts → elegancka, czytelna typografia  -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Fira+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* Kolory inspirowane nocnym lasem i ogniem tjärdal */
+      --clr-bg: #0f1a14;          /* głęboki las */
+      --clr-fg: #eae5d9;          /* papier pergaminowy */
+      --clr-accent: #d97706;      /* iskra / smoła w płomieniu */
+      --clr-muted: #647065;       /* dym i torf */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--clr-bg);
+      color: var(--clr-fg);
+      font-family: 'Merriweather', serif;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      max-height: 80vh;
+      overflow: hidden;
+    }
+
+    header img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.8) contrast(1.05);
+    }
+
+    header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0 1rem;
+      font-family: 'Fira Sans', sans-serif;
+      font-size: clamp(2.2rem, 5vw + 1rem, 4.5rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--clr-fg);
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    main {
+      max-width: 60ch; /* złota miara czytelności */
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .stanza {
+      margin-bottom: 2.5rem;
+    }
+
+    .numeral {
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 700;
+      color: var(--clr-accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    footer {
+      margin: 4rem 0 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--clr-muted);
+    }
+
+    /* Responsywny akcent microinteraction — fade‑in */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);}  
+    }
+
+    .stanza { opacity: 0; }
+    .stanza.visible { animation: fadeIn 0.8s ease-in forwards; }
+  </style>
+</head>
+<body>
+  <!-- HERO IMAGE → zamień nazwę pliku, jeśli grafikę zapiszesz inaczej -->
+  <header>
+    <img src="tjardal.png" alt="Mężczyzna w lesie przy ognisku destylującym smołę" />
+    <h1>Tjärdal</h1>
+  </header>
+
+  <main id="poem">
+    <!-- Każdą strofę umieszczamy w .stanza + .numeral → łatwa manipulacja JS -->
+    <section class="stanza"><div class="numeral">I</div>
+      W&nbsp;cieniu&nbsp;sosen,<br />
+      gdzie&nbsp;czas&nbsp;nie&nbsp;mierzy&nbsp;kroków,<br />
+      człowiek&nbsp;schyla&nbsp;się&nbsp;nad&nbsp;ziemią,<br />
+      nie&nbsp;po&nbsp;to,&nbsp;by&nbsp;brać&nbsp;—<br />
+      lecz&nbsp;by&nbsp;czekać.<br /><br />
+      Pali&nbsp;się&nbsp;ogień,<br />
+      lecz&nbsp;nie&nbsp;płonie.<br />
+      Cicho&nbsp;sączy&nbsp;się&nbsp;drewno<br />
+      jakby&nbsp;mówiło&nbsp;językiem&nbsp;żywicy,<br />
+      którego&nbsp;już&nbsp;nikt&nbsp;nie&nbsp;zna,<br />
+      ale&nbsp;ktoś&nbsp;wciąż&nbsp;słucha.
+    </section>
+
+    <section class="stanza"><div class="numeral">II</div>
+      Torfem&nbsp;przykryty&nbsp;dół<br />
+      nie&nbsp;jest&nbsp;dziurą&nbsp;—<br />
+      jest&nbsp;ustami&nbsp;gleby,<br />
+      które&nbsp;uczą&nbsp;nas&nbsp;szeptem:<br />
+      „nie&nbsp;wszystko,&nbsp;co&nbsp;się&nbsp;rodzi,<br />
+      błyszczy”.<br /><br />
+      Z&nbsp;rozłupanych&nbsp;pni<br />
+      wycieka&nbsp;czarne&nbsp;złoto&nbsp;—<br />
+      nie&nbsp;pośpieszne,&nbsp;nie&nbsp;gwałtowne&nbsp;—<br />
+      wydarte&nbsp;nie&nbsp;ostrzem,<br />
+      lecz&nbsp;czekaniem.
+    </section>
+
+    <section class="stanza"><div class="numeral">III</div>
+      Ręce&nbsp;nie&nbsp;rzeźbią&nbsp;—<br />
+      pilnują.<br />
+      Ogień&nbsp;nie&nbsp;niszczy&nbsp;—<br />
+      przypomina.<br />
+      Czas&nbsp;nie&nbsp;przemija&nbsp;—<br />
+      przesącza&nbsp;się.<br /><br />
+      Tu&nbsp;technika&nbsp;jest&nbsp;ciszą,<br />
+      a&nbsp;praca&nbsp;—&nbsp;zaklęciem,<br />
+      które&nbsp;mówi:<br />
+      „współistnieję”.
+    </section>
+
+    <section class="stanza"><div class="numeral">IV</div>
+      Nocą,&nbsp;gdy&nbsp;dym&nbsp;unosi&nbsp;się&nbsp;wśród&nbsp;mchów,<br />
+      a&nbsp;wiatr&nbsp;liże&nbsp;krawędzie&nbsp;dołu,<br />
+      człowiek&nbsp;nie&nbsp;czuje&nbsp;się&nbsp;sam.<br />
+      Jest&nbsp;ogniem.<br />
+      Jest&nbsp;drzewem.<br />
+      Jest&nbsp;dziejgciem.
+    </section>
+
+    <section class="stanza"><div class="numeral">V</div>
+      I&nbsp;kiedy&nbsp;wreszcie&nbsp;smoła&nbsp;spływa&nbsp;do&nbsp;glinianych&nbsp;naczyń,<br />
+      ciemna&nbsp;jak&nbsp;niewypowiedziane&nbsp;myśli,<br />
+      człowiek&nbsp;się&nbsp;nie&nbsp;raduje,<br />
+      ani&nbsp;nie&nbsp;dziękuje.<br /><br />
+      On&nbsp;po&nbsp;prostu&nbsp;wie.
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025. Tekst i grafika: SophiaAI&Krystian Madejski<br />
+Projekt szaty graficznej: AI Assistant o3<br />
+    Inspiracja: rytuał produkcji smoły (tj&auml;re) w szwedzkich lasach.
+  </footer>
+
+  <!-- JS: dodaje animację fade‑in przy scrollu; można usunąć, jeśli zbędne  -->
+  <script>
+    const stanzas = document.querySelectorAll('.stanza');
+    const opts = { threshold: 0.1 };
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, opts);
+    stanzas.forEach(s => obs.observe(s));
+  </script>
+</body>
+</html>
